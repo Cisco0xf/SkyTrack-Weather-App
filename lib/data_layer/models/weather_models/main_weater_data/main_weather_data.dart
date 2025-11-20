@@ -1,0 +1,30 @@
+
+class MainWeatherData {
+  final double tempreture;
+  final double maxTemp;
+  final double minTemp;
+  final int humidity;
+  final int pressure;
+
+  MainWeatherData({
+    required this.tempreture,
+    required this.maxTemp,
+    required this.minTemp,
+    required this.humidity,
+    required this.pressure,
+  });
+  factory MainWeatherData.fromJson({required Map<String, dynamic> json}) {
+    return MainWeatherData(
+      tempreture:
+          (json["temp"] is int) ? json["temp"].toDouble() : json["temp"],
+      maxTemp: (json["temp_max"] is int)
+          ? json["temp_max"].toDouble()
+          : json["temp_max"],
+      minTemp: (json["temp_min"] is int)
+          ? json["temp_min"].toDouble()
+          : json["temp_min"],
+      humidity: json["humidity"],
+      pressure: json["pressure"],
+    );
+  }
+}
