@@ -83,13 +83,14 @@ class SingleInfoWidget extends StatelessWidget {
         ),
         const Gaps(hRatio: 0.01),
         Text(
+          title,
+          style: AppTextstyle.titleTextStyle,
+        ),
+        const Gaps(height: 6.0),
+        Text(
           percentage,
           style: AppTextstyle.dataTextStyle,
         ),
-        Text(
-          title,
-          style: AppTextstyle.titleTextStyle,
-        )
       ],
     );
   }

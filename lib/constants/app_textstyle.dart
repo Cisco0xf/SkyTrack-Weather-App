@@ -6,7 +6,7 @@ class AppTextstyle {
     fontWeight: FontWeight.bold,
   );
   static TextStyle titleTextStyle = const TextStyle(
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: FontWeight.normal,
   );
 }

@@ -4,6 +4,7 @@ import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/app_textstyle.dart';
+import 'package:weatherapp/constants/gaps.dart';
 
 class WeatherMainInfoWidget extends StatelessWidget {
   const WeatherMainInfoWidget({
@@ -80,12 +81,13 @@ class MainInfoItemWidget extends StatelessWidget {
           height: context.screenHeight * .01,
         ),
         Text(
-          weatherInfo,
-          style: AppTextstyle.dataTextStyle,
-        ),
-        Text(
           title,
           style: AppTextstyle.titleTextStyle,
+        ),
+        const Gaps(height: 6.0),
+        Text(
+          weatherInfo,
+          style: AppTextstyle.dataTextStyle,
         ),
       ],
     );

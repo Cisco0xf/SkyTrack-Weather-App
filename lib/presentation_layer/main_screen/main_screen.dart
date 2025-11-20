@@ -97,11 +97,7 @@ class _MainScreenState extends State<MainScreen> {
                               description:
                                   "Please check yor internet connection, and the location permission then pull to refresh",
                               onRefresh: () async {
-                                /* setState(
-                                    () {
-                                      weatherData = fetchAllWeatherData;
-                                    },
-                                  ); */
+                                await fetchWeather.updateWeatherData();
                               },
                             );
                           }
