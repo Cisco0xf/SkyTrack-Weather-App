@@ -8,6 +8,7 @@ import 'package:weatherapp/common/date_foramt.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/common/navigat_to.dart';
 import 'package:weatherapp/constants/app_colors.dart';
+import 'package:weatherapp/constants/assets.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/presentation_layer/next_forcecase_screen/daily_forcecase_details/forcecase_details_screen.dart';
 import 'package:weatherapp/presentation_layer/next_forcecase_screen/forcecase_tempreture_chart.dart';
@@ -118,9 +119,7 @@ class _MainForcecaseScreenState extends State<MainForcecaseScreen> {
                                     SizedBox(
                                       width: context.screenWidth * .4,
                                       height: context.screenHeight * .1,
-                                      child: Lottie.asset(
-                                        "assets/animations/animations/clouds_state.json",
-                                      ),
+                                      child: Lottie.asset(Assets.cloudState),
                                     ),
                                     Text(
                                       "${dayData.daysAvargeTemp[index].celsiusConvertor.tempConvertor} $currentTempUnite",

@@ -8,6 +8,7 @@ import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/date_foramt.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/constants/app_colors.dart';
+import 'package:weatherapp/constants/assets.dart';
 import 'package:weatherapp/statemanagement_layer/get_each_day_data/each_day_data_provider.dart';
 import 'package:weatherapp/statemanagement_layer/settings_state/temp_convertor_provider.dart';
 
@@ -44,10 +45,7 @@ class ForcecaseTempretureChartWidget extends StatelessWidget {
                     opacity: 0.4,
                     child: ClipRRect(
                       borderRadius: borderRadius(15.0),
-                      child: Image.asset(
-                        "assets/images/png_images/chart_bg.webp",
-                        fit: BoxFit.cover,
-                      ),
+                      child: Image.asset(Assets.charBg, fit: BoxFit.cover),
                     ),
                   ),
                 ),

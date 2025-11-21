@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/app_colors.dart';
+import 'package:weatherapp/constants/assets.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/statemanagement_layer/settings_state/change_theme_provider.dart';
 
@@ -60,8 +61,7 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget>
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       SelectBackgroundWidget(
-                        animationPath:
-                            "assets/animations/animations/animated_bg_2.json",
+                        animationPath: Assets.bg2,
                         isSelected: background.isFirstTheme,
                         selectController: _selectController,
                         onTap: () {
@@ -71,8 +71,7 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget>
                         },
                       ),
                       SelectBackgroundWidget(
-                        animationPath:
-                            "assets/animations/animations/animated_bg.json",
+                        animationPath: Assets.bg1,
                         isSelected: background.isSecondTheme,
                         selectController: _selectController,
                         onTap: () {
@@ -82,8 +81,7 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget>
                         },
                       ),
                       SelectBackgroundWidget(
-                        animationPath:
-                            "assets/animations/animations/animated_bg_3.json",
+                        animationPath: Assets.bg3,
                         isSelected: background.isThirdTheme,
                         selectController: _selectController,
                         onTap: () {
@@ -149,10 +147,7 @@ class SelectBackgroundWidget extends StatelessWidget {
           SizedBox(
             width: context.screenWidth * .3,
             height: context.screenHeight * .07,
-            child: Lottie.asset(
-              controller: selectController,
-              "assets/animations/animations/done.json",
-            ),
+            child: Lottie.asset(controller: selectController, Assets.done),
           )
         } else ...{
           SizedBox(

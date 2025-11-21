@@ -166,6 +166,8 @@ class DevPlatforms extends StatelessWidget {
   }
 }
 
+// assets/animations
+
 class PlatFromCard extends StatelessWidget {
   const PlatFromCard({
     super.key,

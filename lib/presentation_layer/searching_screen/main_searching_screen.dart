@@ -3,7 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/constants/assets.dart';
 import 'package:weatherapp/constants/gaps.dart';
+import 'package:weatherapp/constants/texts.dart';
 import 'package:weatherapp/data_layer/cities_list/cities_list.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/components/recommended_cities_widget.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/components/searching_bar_widget.dart';
@@ -118,10 +120,10 @@ class StartSearchingWeatherWidget extends StatelessWidget {
         SizedBox(
           width: context.screenWidth * .8,
           height: context.screenHeight * .3,
-          child: Lottie.asset("assets/animations/search_weather.json"),
+          child: Lottie.asset(Assets.searchWeather),
         ),
         const Text(
-          "Search Weather in other cities",
+          searchCity,
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,

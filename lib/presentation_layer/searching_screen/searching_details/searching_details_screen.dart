@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/constants/assets.dart';
 import 'package:weatherapp/constants/gaps.dart';
+import 'package:weatherapp/constants/texts.dart';
 import 'package:weatherapp/data_layer/models/weather_models/weather_main_data_model.dart';
 import 'package:weatherapp/presentation_layer/home_screen/components/sunrise_sunset_widget.dart';
 import 'package:weatherapp/presentation_layer/home_screen/components/weather_main_info.dart';
@@ -161,9 +163,7 @@ class _SearchingCityWeatherDataMainScreenState
                         child: SizedBox(
                           width: context.screenWidth * .6,
                           height: context.screenHeight * .14,
-                          child: Lottie.asset(
-                            "assets/animations/animations/clouds_laoding.json",
-                          ),
+                          child: Lottie.asset(Assets.cloudsLoading),
                         ),
                       );
                     } else if (snapShot.hasError) {
@@ -223,10 +223,9 @@ class _SearchingCityWeatherDataMainScreenState
                       );
                     } else {
                       return MainScreenErrorWidget(
-                        animationPath: "assets/animations/internet_error.json",
+                        animationPath: Assets.internetError,
                         title: "Something goes wrong",
-                        description:
-                            "Please check yor internet connection, and the location permission then pull to refresh",
+                        description: checkRefresh,
                         onRefresh: () async {
                           _updateCitySearch();
                         },

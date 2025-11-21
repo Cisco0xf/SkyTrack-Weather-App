@@ -30,7 +30,7 @@ class ChangeThemeProvider with ChangeNotifier {
   ];
 
   Future<void> get setColors async {
-    List<String> theme = await  themeData.getDataFromDatabase();
+    List<String> theme = await themeData.getDataFromDatabase();
     bool isLight = theme[2] == "true";
     if (!isLight) {
       SwitchColors.mainColor = AppColorsDarkMode.mainColor;
@@ -129,14 +129,14 @@ String get mainScreenAnimatedBG {
   String? animationPath;
 
   if (theme.isFirstTheme) {
-    animationPath = "assets/animations/animations/animated_bg_2.json";
+    animationPath = "assets/animations/animated_bg_2.json";
   } else if (theme.isSecondTheme) {
-    animationPath = "assets/animations/animations/animated_bg.json";
+    animationPath = "assets/animations/animated_bg.json";
   } else if (theme.isThirdTheme) {
-    animationPath = "assets/animations/animations/animated_bg_3.json";
+    animationPath = "assets/animations/animated_bg_3.json";
   }
 
-  return animationPath ?? "assets/animations/animations/animated_bg_2.json";
+  return animationPath ?? "assets/animations/animated_bg_2.json";
 }
 
 extension IsLight on BuildContext {

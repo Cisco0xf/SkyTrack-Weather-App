@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/app_colors.dart';
+import 'package:weatherapp/constants/assets.dart';
 
 class SelectUniteItemWidget extends StatelessWidget {
   const SelectUniteItemWidget({
@@ -55,7 +56,7 @@ class SelectUniteItemWidget extends StatelessWidget {
                   child: isSelected
                       ? Lottie.asset(
                           controller: doneController,
-                          "assets/animations/animations/done_1.json",
+                          Assets.done1,
                         )
                       : const SizedBox.shrink(),
                 )

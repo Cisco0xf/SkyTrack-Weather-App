@@ -4,6 +4,7 @@ import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/navigator_key.dart';
 import 'package:weatherapp/constants/gaps.dart';
+import 'package:weatherapp/constants/texts.dart';
 import 'package:weatherapp/statemanagement_layer/settings_state/change_theme_provider.dart';
 
 Future<void> get showExitDialog async {
@@ -25,7 +26,7 @@ Future<void> get showExitDialog async {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const Text(
-                "Would you like to exit the app ?",
+                exitQ,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

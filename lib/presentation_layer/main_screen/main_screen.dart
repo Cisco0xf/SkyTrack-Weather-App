@@ -3,6 +3,8 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/commons.dart';
+import 'package:weatherapp/constants/assets.dart';
+import 'package:weatherapp/constants/texts.dart';
 import 'package:weatherapp/presentation_layer/main_screen/current_screen.dart';
 import 'package:weatherapp/presentation_layer/main_screen/custom_bottom_navigation.dart';
 import 'package:weatherapp/presentation_layer/main_screen/error_widget.dart';
@@ -83,20 +85,16 @@ class _MainScreenState extends State<MainScreen> {
                                   borderRadius: borderRadius(10.0),
                                   color: Colors.black45.withOpacity(0.5),
                                 ),
-                                child: Lottie.asset(
-                                  "assets/animations/animations/clouds_laoding.json",
-                                ),
+                                child: Lottie.asset(Assets.cloudsLoading),
                               ),
                             );
                           }
 
                           if (weather.hasError) {
                             return MainScreenErrorWidget(
-                              animationPath:
-                                  "assets/animations/internet_error.json",
-                              title: "Something goes wrong",
-                              description:
-                                  "Please check yor internet connection, and the location permission then pull to refresh",
+                              animationPath: Assets.internetError,
+                              title: wentWrong,
+                              description: checkRefresh,
                               onRefresh: () async {
                                 await fetchWeather.updateWeatherData();
                               },

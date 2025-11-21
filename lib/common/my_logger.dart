@@ -2,6 +2,8 @@ import 'dart:developer' as dev;
 
 import 'package:flutter/foundation.dart';
 
+// Repo => https://github.com/Cisco0xf/flutter_color_log.git
+
 class Log {
   Log._();
 
