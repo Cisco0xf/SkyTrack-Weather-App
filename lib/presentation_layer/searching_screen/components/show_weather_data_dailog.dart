@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/navigat_to.dart';
 import 'package:weatherapp/common/navigator_key.dart';
 import 'package:weatherapp/constants/app_colors.dart';
@@ -30,7 +31,7 @@ Future<void> showWeatherDataDialog({
               horizontal: 15.0,
             ),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: borderRadius(10.0),
             ),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -61,7 +62,7 @@ Future<void> showWeatherDataDialog({
                           },
                           style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                              borderRadius: borderRadius(15.0),
                               side: const BorderSide(
                                 color: AppColorsLightMode.subColor,
                               ),
@@ -90,7 +91,7 @@ Future<void> showWeatherDataDialog({
                           },
                           color: AppColorsLightMode.subColor,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
+                            borderRadius: borderRadius(15.0),
                           ),
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,

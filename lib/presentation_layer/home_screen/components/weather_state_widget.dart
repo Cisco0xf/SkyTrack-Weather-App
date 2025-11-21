@@ -50,6 +50,10 @@ class _WeatherStateWidgetState extends State<WeatherStateWidget> {
     setState(() => showIndecator = !showIndecator);
   }
 
+  String get _currentTem => widget.isSearching
+      ? "${widget.tempreture} $currentTempUnite"
+      : "${widget.tempreture.celsiusConvertor.tempConvertor} $currentTempUnite";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -76,7 +80,7 @@ class _WeatherStateWidgetState extends State<WeatherStateWidget> {
           ),
         ),
         Text(
-          "${widget.tempreture.celsiusConvertor.tempConvertor} $currentTempUnite",
+          _currentTem,
           style: const TextStyle(
             fontSize: 50,
             fontWeight: FontWeight.bold,

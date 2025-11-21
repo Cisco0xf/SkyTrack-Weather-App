@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/get_wind_direction.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/constants/app_colors.dart';
@@ -28,7 +29,7 @@ class WeatherWindInfoWidget extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: borderRadius(15.0),
           color: SwitchColors.mainColor,
           border: Border.all(
             color: SwitchColors.borderColor,

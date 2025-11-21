@@ -1,7 +1,7 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ApiConstants {
-  static String apikey = dotenv.env["WEATHER_API_KEY"] ?? "UNAVAILABLE_KEY";
+  static String apikey = dotenv.env["WEATHER_API_KEY"] ?? "UNVALIDE_KEY";
 
   static const String weatherDomain =
       "https://api.openweathermap.org/data/2.5/weather";

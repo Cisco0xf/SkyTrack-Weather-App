@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/presentation_layer/settgins_screen/select_item_widget.dart';
@@ -52,7 +53,7 @@ class _SelectTempretureUniteWidgetState
                 padding: const EdgeInsets.all(10.0),
                 margin: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: borderRadius(15.0),
                   color: SwitchColors.mainColor,
                 ),
                 child: Column(

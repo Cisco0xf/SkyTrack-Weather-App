@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/celsius_convertor.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/date_foramt.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/common/navigat_to.dart';
@@ -71,71 +72,64 @@ class _MainForcecaseScreenState extends State<MainForcecaseScreen> {
                             child: Container(
                               margin: const EdgeInsets.all(10.0),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15.0),
+                                borderRadius: borderRadius(15.0),
                                 color: SwitchColors.mainColor,
                                 border:
                                     Border.all(color: SwitchColors.borderColor),
                               ),
-                              child: Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  onTap: () {
-                                    navigatTo(
-                                      rout: ForcecaseDetailsScreen(
-                                        dayTitle: dayData.daysTitlesList[index],
-                                        forcecaseDailyData:
-                                            dayData.forcecaseDailyData[index],
-                                      ),
-                                    );
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: context.screenWidth * .28,
-                                          child: Column(
-                                            children: <Widget>[
-                                              Text(
-                                                dayData.daysTitlesList[index],
-                                                style: const TextStyle(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              Text(
-                                                dayData.dailyTimesTemp[index]
-                                                    .formateTimeTemps
-                                                    .formatedDate(
-                                                        format: "MMM d"),
-                                                style: const TextStyle(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: context.screenWidth * .4,
-                                          height: context.screenHeight * .1,
-                                          child: Lottie.asset(
-                                            "assets/animations/animations/clouds_state.json",
-                                          ),
-                                        ),
-                                        Text(
-                                          "${dayData.daysAvargeTemp[index].celsiusConvertor.tempConvertor} $currentTempUnite",
-                                          style: const TextStyle(
-                                            fontSize: 23,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
+                              child: Clicker(
+                                radius: 15.0,
+                                onClick: () {
+                                  navigatTo(
+                                    rout: ForcecaseDetailsScreen(
+                                      dayTitle: dayData.daysTitlesList[index],
+                                      forcecaseDailyData:
+                                          dayData.forcecaseDailyData[index],
                                     ),
-                                  ),
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    SizedBox(
+                                      width: context.screenWidth * .28,
+                                      child: Column(
+                                        children: <Widget>[
+                                          Text(
+                                            dayData.daysTitlesList[index],
+                                            style: const TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            dayData.dailyTimesTemp[index]
+                                                .formateTimeTemps
+                                                .formatedDate(format: "MMM d"),
+                                            style: const TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: context.screenWidth * .4,
+                                      height: context.screenHeight * .1,
+                                      child: Lottie.asset(
+                                        "assets/animations/animations/clouds_state.json",
+                                      ),
+                                    ),
+                                    Text(
+                                      "${dayData.daysAvargeTemp[index].celsiusConvertor.tempConvertor} $currentTempUnite",
+                                      style: const TextStyle(
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),

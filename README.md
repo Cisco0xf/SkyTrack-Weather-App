@@ -5,11 +5,11 @@
 ## How to Install:
 
 > [!NOTE]
-> In the `pubspec.yamle` fie you will find the `.env` file in the assets, you will have to create one
+> In the `pubspec.yamle` file you will find the `.env` file in the assets, you will have to create one
 > 
-> Flutter version of the project : `v3.24.2`
+> Flutter version of the project : `v3.24.4`
 
-1- Got to [OpenWeatherMap](https://openweathermap.org/api/one-call-api) and create a new API Key
+1- Go to [OpenWeatherMap](https://openweathermap.org/api/one-call-api) and create a new API Key
 
 2- Run the command `git clone https://github.com/Cisco0xf/SkyTrack-Weather-App.git`
 
@@ -134,4 +134,7 @@ dependencies:
   </tr>
  
 </table>
+
+## License
+MIT © Mahmoud Nagy
 

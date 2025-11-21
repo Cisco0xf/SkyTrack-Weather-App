@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/celsius_convertor.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/date_foramt.dart';
 import 'package:weatherapp/common/get_weather_state_image.dart';
 import 'package:weatherapp/common/get_wind_direction.dart';
@@ -143,7 +144,7 @@ class _ForcecaseDetailsScreenState extends State<ForcecaseDetailsScreen>
                             Container(
                               margin: const EdgeInsets.all(5.0),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: borderRadius(10.0),
                                 color: SwitchColors.mainColor,
                               ),
                               child: IconButton(
@@ -178,7 +179,7 @@ class _ForcecaseDetailsScreenState extends State<ForcecaseDetailsScreen>
                                 padding: const EdgeInsets.all(10.0),
                                 margin: const EdgeInsets.all(10.0),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15.0),
+                                  borderRadius: borderRadius(15.0),
                                   color: SwitchColors.mainColor,
                                 ),
                                 child: Column(
@@ -186,8 +187,7 @@ class _ForcecaseDetailsScreenState extends State<ForcecaseDetailsScreen>
                                     Container(
                                       padding: const EdgeInsets.all(5.0),
                                       decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
+                                        borderRadius: borderRadius(15.0),
                                         color: Colors.black26.withOpacity(0.4),
                                       ),
                                       child: Text(
@@ -329,7 +329,7 @@ class ForcecaseDailyWidget extends StatelessWidget {
         margin: const EdgeInsets.all(5.0),
         width: context.screenWidth * .25,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: borderRadius(15.0),
           color: Colors.black26.withOpacity(0.4),
           border: Border.all(color: SwitchColors.borderColor),
         ),

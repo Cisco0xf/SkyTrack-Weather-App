@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/statemanagement_layer/settings_state/change_theme_provider.dart';
@@ -34,7 +35,7 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget>
           margin: const EdgeInsets.all(10.0),
           height: context.screenHeight * .45,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: borderRadius(15.0),
             color: SwitchColors.mainColor,
           ),
           child: Column(
@@ -42,7 +43,7 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget>
               const Row(
                 children: <Widget>[
                   Gaps(wRatio: 0.02),
-                   Text(
+                  Text(
                     "App Theme",
                     style: TextStyle(
                       fontSize: 17,
@@ -129,14 +130,14 @@ class SelectBackgroundWidget extends StatelessWidget {
             height: context.screenHeight * .28,
             margin: const EdgeInsets.symmetric(horizontal: 15.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: borderRadius(15.0),
               border: Border.all(
                 color: isSelected ? Colors.white : const Color(0xFF000000),
                 width: isSelected ? 2.0 : 1.0,
               ),
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: borderRadius(15.0),
               child: Lottie.asset(
                 animationPath,
                 fit: BoxFit.cover,

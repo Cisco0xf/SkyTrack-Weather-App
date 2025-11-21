@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/common/timestamp_format.dart';
 import 'package:weatherapp/constants/app_colors.dart';
@@ -25,7 +26,7 @@ class SunriseSunsetDataWidget extends StatelessWidget {
         margin: const EdgeInsets.all(15.0),
         height: context.screenHeight * .22,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: borderRadius(15.0),
           color: SwitchColors.mainColor,
           border: Border.all(
             color: SwitchColors.borderColor,
@@ -86,7 +87,7 @@ class SysInfoWidget extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: Colors.white30.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(5.0),
+            borderRadius: borderRadius(5.0),
           ),
           width: context.screenWidth * .1,
           height: context.screenHeight * .05,

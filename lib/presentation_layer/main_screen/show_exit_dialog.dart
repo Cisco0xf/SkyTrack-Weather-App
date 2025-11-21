@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/navigator_key.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/statemanagement_layer/settings_state/change_theme_provider.dart';
@@ -12,7 +13,7 @@ Future<void> get showExitDialog async {
     builder: (context) {
       return Dialog(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: borderRadius(10.0),
         ),
         insetPadding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Padding(
@@ -43,7 +44,7 @@ Future<void> get showExitDialog async {
                       },
                       style: OutlinedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0),
+                          borderRadius: borderRadius(15.0),
                         ),
                       ),
                       child: const Text("Cancel"),
@@ -57,7 +58,7 @@ Future<void> get showExitDialog async {
                         SystemNavigator.pop();
                       },
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: borderRadius(15.0),
                       ),
                       color: context.isLight
                           ? const Color(0xFF8B93FF)

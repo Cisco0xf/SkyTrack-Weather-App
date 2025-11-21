@@ -8,6 +8,7 @@ import 'package:weatherapp/presentation_layer/home_screen/components/sunrise_sun
 import 'package:weatherapp/presentation_layer/home_screen/components/weather_main_info.dart';
 import 'package:weatherapp/presentation_layer/home_screen/components/weather_state_widget.dart';
 import 'package:weatherapp/presentation_layer/home_screen/components/weather_wind_info.dart';
+import 'package:weatherapp/presentation_layer/main_screen/error_widget.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/searching_details/not_found_city.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/searching_details/search_city_title.dart';
 import 'package:weatherapp/statemanagement_layer/searching_weather/fetch_searched_city_provider.dart';
@@ -108,6 +109,13 @@ class _SearchingCityWeatherDataMainScreenState
 
   late final Future<WeatherDataModel> fetchCityWeatherData;
   late final SearchingCityWeatherDataProvider cityWeatherData;
+
+  void _updateCitySearch() {
+    fetchCityWeatherData = cityWeatherData.fetchSearchedCityWeatherData(
+      cityName: widget.cityName,
+    );
+  }
+
   @override
   initState() {
     _animateBG;
@@ -116,9 +124,8 @@ class _SearchingCityWeatherDataMainScreenState
       listen: false,
     );
 
-    fetchCityWeatherData = cityWeatherData.fetchSearchedCityWeatherData(
-      cityName: widget.cityName,
-    );
+    _updateCitySearch();
+
     super.initState();
   }
 
@@ -215,14 +222,14 @@ class _SearchingCityWeatherDataMainScreenState
                         ],
                       );
                     } else {
-                      return const Center(
-                        child: Text(
-                          "You Fucked Up",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25,
-                          ),
-                        ),
+                      return MainScreenErrorWidget(
+                        animationPath: "assets/animations/internet_error.json",
+                        title: "Something goes wrong",
+                        description:
+                            "Please check yor internet connection, and the location permission then pull to refresh",
+                        onRefresh: () async {
+                          _updateCitySearch();
+                        },
                       );
                     }
                   },

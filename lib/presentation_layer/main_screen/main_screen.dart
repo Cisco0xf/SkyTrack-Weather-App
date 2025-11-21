@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/presentation_layer/main_screen/current_screen.dart';
 import 'package:weatherapp/presentation_layer/main_screen/custom_bottom_navigation.dart';
 import 'package:weatherapp/presentation_layer/main_screen/error_widget.dart';
@@ -79,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
                                 width: context.screenWidth * .35,
                                 height: context.screenHeight * .15,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
+                                  borderRadius: borderRadius(10.0),
                                   color: Colors.black45.withOpacity(0.5),
                                 ),
                                 child: Lottie.asset(

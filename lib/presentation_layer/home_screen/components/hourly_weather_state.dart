@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/celsius_convertor.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/date_foramt.dart';
 import 'package:weatherapp/common/get_weather_state_image.dart';
 import 'package:weatherapp/common/glass_layer.dart';
@@ -108,7 +109,7 @@ class HourlyInfoWidget extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         margin: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: borderRadius(20),
           color: isFirst
               ? context.isLight
                   ? const Color(0xFF9d91ff).withOpacity(0.4)

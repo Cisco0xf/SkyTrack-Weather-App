@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/gaps.dart';
@@ -62,7 +63,7 @@ class _CustomBottomNavigationWidgetState
         height: context.screenHeight * .08,
         decoration: BoxDecoration(
           color: const Color(0xFF7f6fba).withOpacity(0.7),
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: borderRadius(30.0),
           border: Border.all(color: SwitchColors.borderColor),
         ),
         child: Consumer<SelectCurrentContentProvider>(
@@ -139,7 +140,7 @@ class BottomNavItemWidget extends StatelessWidget {
                       width: isSelected ? value : 0.0,
                       height: 4,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: borderRadius(5.0),
                         color: AppColorsLightMode.subColor,
                       ),
                     );

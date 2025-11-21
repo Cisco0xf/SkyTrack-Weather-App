@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/presentation_layer/settgins_screen/components/change_theme_widget.dart';
+import 'package:weatherapp/presentation_layer/settgins_screen/components/dev_section.dart';
 import 'package:weatherapp/presentation_layer/settgins_screen/components/speed_unite_convertor.dart';
 import 'package:weatherapp/presentation_layer/settgins_screen/components/temp_unite_convertor.dart';
 
@@ -35,8 +36,8 @@ class SettingsMainScreen extends StatelessWidget {
                 SpeedConvertorWidget(),
                 Divider(),
                 ChangeThemeWidget(),
-                Gaps(hRatio: 0.07),
-                Gaps(hRatio: 0.05),
+                DevSection(),
+                Gaps(hRatio: 0.12),
               ],
             ),
           ),

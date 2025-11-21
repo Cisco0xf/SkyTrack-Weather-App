@@ -7,6 +7,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/my_logger.dart';
 import 'package:weatherapp/common/show_notification.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/components/show_weather_data_dailog.dart';
@@ -113,7 +114,7 @@ class _PickLocationFromMapWidgetState extends State<PickLocationFromMapWidget> {
             top: context.screenHeight * .05,
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: borderRadius(10.0),
                 color: Colors.black45.withOpacity(0.4),
               ),
               child: IconButton(

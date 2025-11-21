@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/gaps.dart';
 
@@ -19,7 +20,7 @@ class CityWeatherTitleWidget extends StatelessWidget {
         Container(
           margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: borderRadius(15.0),
             color: SwitchColors.mainColor,
           ),
           child: IconButton(

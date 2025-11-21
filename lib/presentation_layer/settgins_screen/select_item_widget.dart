@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 
 class SelectUniteItemWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class SelectUniteItemWidget extends StatelessWidget {
         milliseconds: 400,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: borderRadius(8.0),
         color: isSelected ? AppColorsLightMode.subColor.withOpacity(0.3) : null,
         border: Border.all(
           color: isSelected ? Colors.white : Colors.grey,
@@ -34,7 +35,7 @@ class SelectUniteItemWidget extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: borderRadius(8.0),
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.all(8.0),

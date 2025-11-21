@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/constants/gaps.dart';
 
 class NotFoundCityWidget extends StatelessWidget {
@@ -22,7 +23,7 @@ class NotFoundCityWidget extends StatelessWidget {
             const Gaps(wRatio: 0.02),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: borderRadius(10.0),
                 color: Colors.black38.withOpacity(0.5),
               ),
               child: IconButton(

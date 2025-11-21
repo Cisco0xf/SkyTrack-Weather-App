@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/navigat_to.dart';
 import 'package:weatherapp/constants/gaps.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/components/pick_location_map_widget.dart';
@@ -54,14 +55,14 @@ class SearchingBarWidget extends StatelessWidget {
               ],
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: borderRadius(15.0),
                   borderSide: const BorderSide(
                     color: Color(0xFFF5EFFF),
                     width: 1.2,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: borderRadius(15.0),
                   borderSide: const BorderSide(
                     color: Color(0xFFA594F9),
                     width: 2.2,
@@ -87,7 +88,7 @@ class SearchingBarWidget extends StatelessWidget {
             height: context.screenHeight * .07,
             width: context.screenWidth * .15,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: borderRadius(10.0),
               color: !context.isLight
                   ? Colors.black.withOpacity(0.7)
                   : Colors.white54.withOpacity(0.5),
@@ -99,7 +100,7 @@ class SearchingBarWidget extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: borderRadius(10.0),
                 onTap: () {
                   navigatTo(
                     rout: const PickLocationFromMapWidget(),

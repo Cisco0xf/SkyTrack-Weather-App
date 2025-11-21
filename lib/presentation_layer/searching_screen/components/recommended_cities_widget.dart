@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:weatherapp/common/app_dimension.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/navigat_to.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/presentation_layer/searching_screen/searching_details/searching_details_screen.dart';
@@ -34,13 +35,13 @@ class RecommendedCitiesListWidget extends StatelessWidget {
               vertical: 5.0,
             ),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: borderRadius(15.0),
               color: SwitchColors.mainColor,
             ),
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                borderRadius: BorderRadius.circular(15.0),
+                borderRadius: borderRadius(15.0),
                 onTap: () {
                   navigatTo(
                     rout: SearchingCityWeatherDataMainScreen(

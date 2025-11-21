@@ -67,11 +67,7 @@ class _MainSearchingScreenState extends State<MainSearchingScreen> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).requestFocus(
-          FocusNode(),
-        );
-      },
+      onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       child: Column(
         children: <Widget>[
           const Gaps(hRatio: 0.05),

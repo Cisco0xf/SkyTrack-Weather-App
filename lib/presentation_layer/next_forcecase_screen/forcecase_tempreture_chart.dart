@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/common/app_dimension.dart';
 import 'package:weatherapp/common/celsius_convertor.dart';
+import 'package:weatherapp/common/commons.dart';
 import 'package:weatherapp/common/date_foramt.dart';
 import 'package:weatherapp/common/glass_layer.dart';
 import 'package:weatherapp/constants/app_colors.dart';
@@ -31,7 +32,7 @@ class ForcecaseTempretureChartWidget extends StatelessWidget {
               horizontal: 10.0,
             ),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: borderRadius(15.0),
               //color: Colors.amber,
               color: const Color(0xFF5A639C).withOpacity(0.3),
               border: Border.all(color: SwitchColors.borderColor),
@@ -42,7 +43,7 @@ class ForcecaseTempretureChartWidget extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.4,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: borderRadius(15.0),
                       child: Image.asset(
                         "assets/images/png_images/chart_bg.webp",
                         fit: BoxFit.cover,
