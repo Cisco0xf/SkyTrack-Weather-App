@@ -4,9 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
 import 'package:weatherapp/common/my_logger.dart';
+import 'package:weatherapp/common/navigator_key.dart';
 import 'package:weatherapp/common/show_notification.dart';
+import 'package:weatherapp/statemanagement_layer/fetch_weather_data/fetch_weather_data.dart';
 
 class WeatherLocation extends ChangeNotifier {
   // Chaeck Location Permission
@@ -15,6 +18,21 @@ class WeatherLocation extends ChangeNotifier {
     final PermissionStatus locationStatus = await Permission.location.status;
 
     final bool isGranted = locationStatus == PermissionStatus.granted;
+
+    if (!isGranted) {
+      await Permission.location.request().whenComplete(
+        () async {
+          await Provider.of<FetchWeatherProvider>(
+            navigationKey.currentContext!,
+            listen: false,
+          ).updateWeatherData();
+        },
+      );
+
+      if (isGranted) {
+        return true;
+      }
+    }
 
     if (isGranted) {
       return true;
@@ -64,7 +82,7 @@ class WeatherLocation extends ChangeNotifier {
 
     longitude = position.longitude;
     latitude = position.latitude;
-    
+
     Log.log("Got Longitude & latitude...");
   }
 
