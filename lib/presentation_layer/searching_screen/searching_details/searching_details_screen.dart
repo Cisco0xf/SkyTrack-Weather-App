@@ -159,14 +159,12 @@ class _SearchingCityWeatherDataMainScreenState
                           ),
                         ),
                       );
-                    }
-                    if (snapShot.hasError) {
+                    } else if (snapShot.hasError) {
                       return NotFoundCityWidget(
                         cityName: widget.cityName,
                         isMap: widget.isMap,
                       );
-                    }
-                    if (snapShot.hasData) {
+                    } else if (snapShot.hasData) {
                       WeatherDataModel cityWeather =
                           snapShot.data as WeatherDataModel;
                       return Column(
@@ -216,9 +214,17 @@ class _SearchingCityWeatherDataMainScreenState
                           ),
                         ],
                       );
+                    } else {
+                      return const Center(
+                        child: Text(
+                          "You Fucked Up",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                          ),
+                        ),
+                      );
                     }
-
-                    return const SizedBox();
                   },
                 ),
               );

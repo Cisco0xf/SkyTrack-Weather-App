@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -10,9 +11,18 @@ import 'package:weatherapp/statemanagement_layer/app_providers.dart';
 import 'package:weatherapp/statemanagement_layer/settings_state/change_theme_provider.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
   await dotenv.load();
 
   runApp(const WeatherAppRoot());
+
+  SystemChrome.setPreferredOrientations(
+    <DeviceOrientation>[
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ],
+  );
 }
 
 class WeatherAppRoot extends StatelessWidget {
