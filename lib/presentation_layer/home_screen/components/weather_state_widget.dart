@@ -51,7 +51,7 @@ class _WeatherStateWidgetState extends State<WeatherStateWidget> {
   }
 
   String get _currentTem => widget.isSearching
-      ? "${widget.tempreture} $currentTempUnite"
+      ? "${widget.tempreture} °C"
       : "${widget.tempreture.celsiusConvertor.tempConvertor} $currentTempUnite";
 
   @override
