@@ -14,9 +14,7 @@ class SwitchSpeedUnit extends ChangeNotifier {
     notifyListeners();
   }
 
-  void initializeSpeedUnite(bool db) {
-    isKmPh = db;
-  }
+  void initializeSpeedUnite(bool db) => isKmPh = db;
 }
 
 extension SpeedConvertor on double {
